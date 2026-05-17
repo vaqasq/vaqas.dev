@@ -17,7 +17,7 @@ func fetchImage(apiKey string) string {
 		ImageURL string `json:"url"`
 	}
 
-	//use api
+	//api
 	reponse, err := http.Get("https://api.nasa.gov/planetary/apod?api_key=" + apiKey)
 
 	if err != nil {
