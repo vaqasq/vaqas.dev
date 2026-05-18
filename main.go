@@ -57,6 +57,7 @@ func main() {
 	godotenv.Load()
 
 	http.HandleFunc("/", handler)
+	http.Handle("/static-files/", http.StripPrefix("/static-files/", http.FileServer(http.Dir("./static-files"))))
 	log.Fatal(http.ListenAndServe(":8080", nil))
 
 }

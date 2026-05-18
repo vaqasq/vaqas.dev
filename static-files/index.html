@@ -1,12 +1,68 @@
 <!DOCTYPE html>
 <html>
+    <!-- Similar structure to neoarz, just add APOD at the bottom-->
+    <head>
+        <title>personal site webpage for vaqas.dev</title>
+        <link rel="icon" type="image/png" href="/static-files/favicon.png">
+        <link rel="stylesheet" href="/static-files/style.css">
+    </head>
 
-<head>
-    <title>First Web Page</title>
-</head>
+    <body>
+        <!--Header-->
+        <h2>welcome, I am vaqas</h2>
+        <h3>I'm an undergraduate studying computer science and engineering. My background is largely in math and science research. I also tutor math and science on the side.</h3>
+        
+        <!--Social Medias/Contacts-->
+        <h2>socials</h2>
+        <h3>
+            <ul>
+            <li>
+            <a href="mailto:me@vaqas.dev", target="_blank">
+                email: me[at]vaqas[dot]dev
+             </a>
+             </li>
+             <li>
+             <a href="https://www.linkedin.com/in/vaqas-q-8a0a7340a/?isSelfProfile=true", target="_blank">
+                linkedin
+             </a>
+             </li>
+             <li>
+             <a href="https://github.com/vaqasq", target="_blank">
+                github
+             </a>
+             </li>
+             <li>
+             <a href="https://x.com/vaqas_q", target="_blank">
+                x (formerly twitter)
+             </a>
+             </li>
+            </ul>
+        </h3>
 
-<body>
-   <img src="{{.}}">
-</body>
+        <!--Projects-->
+        <h2>projects</h2>
+        <h3><a href="https://github.com/vaqasq/Hodgkin-Huxley", target="_blank">
+            numerical simulation of the hodgin-huxley model
+        </a> </h3>
+        <p style="margin-left: 40px;">
+            Implemented the Hodgkin-Huxley neuron model in pure Python, solving four coupled nonlinear ODEs with a custom Euler integrator. Matched output to biological parameters.
+        <h3><a href="https://github.com/vaqasq/Linear-Algebra-Library", target="_blank">
+            custom linear algebra library in python
+        </a> </h3>
+        <p style="margin-left: 40px;">
+            Built a linear algebra library from scratch in Python covering RREF, matrix inversion, and determinants. Used as the backend for custom ML implementations.
+        </p>
+
+        <!-- NASA APOD -->
+        <br>
+        <div style="margin-left: 23%;">
+        <h3> <a href="https://apod.nasa.gov/apod/astropix.html", target="_blank", title="goes to NASA APOD">
+                daily astro photo | nasa apod <!--link name on user end-->
+            </a></h3>
+        </div>
+        <div style="margin-left: 10%;">
+        <img src="{{.}}", height="250", alt="nasa's astronomy picture of the day">
+        </div>
+    </body>
 
 </html>
