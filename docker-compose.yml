@@ -1,0 +1,21 @@
+services:
+  app:
+    build: .
+    environment:
+      - NASA_API_KEY=${NASA_API_KEY}
+    expose:
+      - "8080"
+
+  caddy:
+    image: caddy:latest
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile
+      - caddy_data:/data
+    depends_on:
+      - app
+
+volumes:
+  caddy_data:
