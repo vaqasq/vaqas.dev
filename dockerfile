@@ -1,8 +1,12 @@
-# Use the official lightweight Caddy image
-FROM caddy:latest
+FROM golang:1.26-alpine AS builder
+WORKDIR /app
+COPY go.mod go.sum ./
+RUN go mod download
+COPY . .
+RUN go build -o server .
 
-# Copy your configuration file
-COPY Caddyfile /etc/caddy/Caddyfile
-
-# Copy your static site content to the default Caddy server root
-COPY ./dist /srv
+FROM alpine:latest
+WORKDIR /app
+COPY --from=builder /app/server .
+COPY --from=builder /app/static-files ./static-files
+CMD ["./server"]
