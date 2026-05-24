@@ -64,13 +64,17 @@
         </p>
         <!-- NASA APOD -->
         <br>
-        <div style="text-align: center;"> //style="margin-left: 23%;"
-        <h3> <a href="https://apod.nasa.gov/apod/astropix.html", target="_blank", title="goes to NASA APOD">
-                daily astro photo | nasa apod <!--link name on user end-->
+        <div style="text-align: center;">
+            <h3><a href="https://apod.nasa.gov/apod/astropix.html" target="_blank" title="goes to NASA APOD">
+                daily astro photo | nasa apod
             </a></h3>
         </div>
-        <div> //style="margin-left: 20%;"
-        <img src="{{.}}", alt="nasa's astronomy picture of the day", class="apod">
+        <div style="text-align: center;">
+            {{if eq .MediaType "image"}}
+            <img src="{{.ImageURL}}" alt="nasa's astronomy picture of the day" class="apod">
+            {{else}}
+            <p>no picture available today </p>
+            {{end}}
         </div>
     </body>
 

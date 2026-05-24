@@ -10,11 +10,12 @@ import (
 	"github.com/joho/godotenv"
 )
 
-func fetchImage(apiKey string) string {
+func fetchImage(apiKey string) []string {
 
 	// define struct to get the field you want
 	type Response struct {
-		ImageURL string `json:"url"`
+		ImageURL  string `json:"url"`
+		MediaType string `json:"media_type"`
 	}
 
 	//api
@@ -33,14 +34,22 @@ func fetchImage(apiKey string) string {
 	}
 
 	// resp.ImageURL is the image URL
-	return resp.ImageURL
+	return []string{resp.ImageURL, resp.MediaType}
 
 }
 
 func handler(w http.ResponseWriter, r *http.Request) {
 
 	apiKey := os.Getenv("NASA_API_KEY")
-	imageURL := fetchImage(apiKey)
+	fetchSlice := fetchImage(apiKey)
+
+	data := struct {
+		ImageURL  string
+		MediaType string
+	}{
+		ImageURL:  fetchSlice[0],
+		MediaType: fetchSlice[1],
+	}
 
 	tmpl, err := template.ParseFiles("static-files/index.html")
 
@@ -48,7 +57,7 @@ func handler(w http.ResponseWriter, r *http.Request) {
 		log.Fatal(err)
 	}
 
-	tmpl.Execute(w, imageURL)
+	tmpl.Execute(w, data)
 
 }
 
