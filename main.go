@@ -10,7 +10,7 @@ import (
 	"github.com/joho/godotenv"
 )
 
-func fetchImage(apiKey string) []string {
+func fetchImage(apiKey string) ([]string, error) {
 
 	// define struct to get the field you want
 	type Response struct {
@@ -22,7 +22,7 @@ func fetchImage(apiKey string) []string {
 	reponse, err := http.Get("https://api.nasa.gov/planetary/apod?api_key=" + apiKey)
 
 	if err != nil {
-		log.Fatal(err)
+		return nil, err
 	}
 
 	defer reponse.Body.Close()
@@ -30,18 +30,23 @@ func fetchImage(apiKey string) []string {
 	var resp Response
 
 	if err := json.NewDecoder(reponse.Body).Decode(&resp); err != nil {
-		log.Fatal(err)
+		return nil, err
 	}
 
 	// resp.ImageURL is the image URL
-	return []string{resp.ImageURL, resp.MediaType}
+	return []string{resp.ImageURL, resp.MediaType}, nil
 
 }
 
 func handler(w http.ResponseWriter, r *http.Request) {
 
 	apiKey := os.Getenv("NASA_API_KEY")
-	fetchSlice := fetchImage(apiKey)
+	fetchSlice, err := fetchImage(apiKey)
+
+	if err != nil {
+		http.Error(w, "Failed to fetch image", http.StatusInternalServerError)
+		return 
+	}
 
 	data := struct {
 		ImageURL  string
@@ -56,8 +61,10 @@ func handler(w http.ResponseWriter, r *http.Request) {
 	if err != nil {
 		log.Fatal(err)
 	}
-
-	tmpl.Execute(w, data)
+	
+	if err := tmpl.Execute(w, data); err != nil{
+		log.Println(err)
+	}
 
 }
 
