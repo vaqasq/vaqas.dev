@@ -2,6 +2,7 @@ package main
 
 import (
 	"encoding/json"
+	"fmt"
 	"html/template"
 	"log"
 	"net/http"
@@ -24,17 +25,21 @@ func fetchImage(apiKey string) ([]string, error) {
 	}
 
 	//api
-	reponse, err := http.Get("https://api.nasa.gov/planetary/apod?api_key=" + apiKey)
+	response, err := http.Get("https://api.nasa.gov/planetary/apod?api_key=" + apiKey)
 
 	if err != nil {
 		return nil, err
 	}
 
-	defer reponse.Body.Close()
+	defer response.Body.Close()
+
+	if response.StatusCode != 200 {
+		return nil, fmt.Errorf("NASA API failed with status: %d", response.StatusCode)
+	}
 
 	var resp Response
 
-	if err := json.NewDecoder(reponse.Body).Decode(&resp); err != nil {
+	if err := json.NewDecoder(response.Body).Decode(&resp); err != nil {
 		return nil, err
 	}
 
@@ -46,33 +51,26 @@ func fetchImage(apiKey string) ([]string, error) {
 func handler(w http.ResponseWriter, r *http.Request) {
 
 	apiKey := os.Getenv("NASA_API_KEY")
-
-	// Current UTC date to be used as a key for the cache
 	dateOnly := time.Now().UTC().Format("2006-01-02")
-	raw, found := C.Get(dateOnly)
 
+	raw, found := C.Get(dateOnly)
 	var fetchSlice []string
 
-	if found {
+	// Creates a flag to track if we need to call the API
+	needsFetch := false
 
+	if found {
 		var ok bool
 		fetchSlice, ok = raw.([]string)
 
-		if ok == false {
-			var err error
-			fetchSlice, err = fetchImage(apiKey)
-
-			if err != nil {
-				http.Error(w, "Failed to fetch image", http.StatusInternalServerError)
-				return
-			}
-
-			C.Set(dateOnly, fetchSlice, cache.DefaultExpiration)
-
+		if !ok {
+			needsFetch = true
 		}
-
 	} else {
+		needsFetch = true
+	}
 
+	if needsFetch {
 		var err error
 		fetchSlice, err = fetchImage(apiKey)
 
@@ -81,9 +79,15 @@ func handler(w http.ResponseWriter, r *http.Request) {
 			return
 		}
 
-		C.Set(dateOnly, fetchSlice, cache.DefaultExpiration)
+		// Calculate time until midnight, aligns with APOD
+		now := time.Now().UTC()
+		nextMidnight := time.Date(now.Year(), now.Month(), now.Day()+1, 0, 0, 0, 0, time.UTC)
+		timeUntilMidnight := nextMidnight.Sub(now)
+
+		C.Set(dateOnly, fetchSlice, timeUntilMidnight)
 	}
 
+	// Render the template
 	data := struct {
 		ImageURL  string
 		MediaType string
@@ -103,7 +107,6 @@ func handler(w http.ResponseWriter, r *http.Request) {
 		http.Error(w, "Failed to execute templates", http.StatusInternalServerError)
 		return
 	}
-
 }
 
 func main() {
