@@ -6,9 +6,14 @@ import (
 	"log"
 	"net/http"
 	"os"
+	"time"
 
 	"github.com/joho/godotenv"
+	"github.com/patrickmn/go-cache"
 )
+
+// Cache as a global variable. Don't need a closure for the handler now
+var C = cache.New(26*time.Hour, 6*time.Hour)
 
 func fetchImage(apiKey string) ([]string, error) {
 
@@ -41,11 +46,42 @@ func fetchImage(apiKey string) ([]string, error) {
 func handler(w http.ResponseWriter, r *http.Request) {
 
 	apiKey := os.Getenv("NASA_API_KEY")
-	fetchSlice, err := fetchImage(apiKey)
 
-	if err != nil {
-		http.Error(w, "Failed to fetch image", http.StatusInternalServerError)
-		return 
+	// Current UTC date to be used as a key for the cache
+	dateOnly := time.Now().UTC().Format("2006-01-02")
+	raw, found := C.Get(dateOnly)
+
+	var fetchSlice []string
+
+	if found {
+
+		var ok bool
+		fetchSlice, ok = raw.([]string)
+
+		if ok == false {
+			var err error
+			fetchSlice, err = fetchImage(apiKey)
+
+			if err != nil {
+				http.Error(w, "Failed to fetch image", http.StatusInternalServerError)
+				return
+			}
+
+			C.Set(dateOnly, fetchSlice, cache.DefaultExpiration)
+
+		}
+
+	} else {
+
+		var err error
+		fetchSlice, err = fetchImage(apiKey)
+
+		if err != nil {
+			http.Error(w, "Failed to fetch image", http.StatusInternalServerError)
+			return
+		}
+
+		C.Set(dateOnly, fetchSlice, cache.DefaultExpiration)
 	}
 
 	data := struct {
@@ -59,11 +95,13 @@ func handler(w http.ResponseWriter, r *http.Request) {
 	tmpl, err := template.ParseFiles("static-files/index.html")
 
 	if err != nil {
-		log.Fatal(err)
+		http.Error(w, "Failed to parse static files ", http.StatusInternalServerError)
+		return
 	}
-	
-	if err := tmpl.Execute(w, data); err != nil{
-		log.Println(err)
+
+	if err := tmpl.Execute(w, data); err != nil {
+		http.Error(w, "Failed to execute templates", http.StatusInternalServerError)
+		return
 	}
 
 }
