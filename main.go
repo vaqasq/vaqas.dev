@@ -54,8 +54,8 @@ func handler(w http.ResponseWriter, r *http.Request) {
 	dateOnly := time.Now().UTC().Format("2006-01-02")
 
 	raw, found := C.Get(dateOnly)
-	var fetchSlice []string
 
+	var fetchSlice []string
 	// Creates a flag to track if we need to call the API
 	needsFetch := false
 
@@ -79,12 +79,18 @@ func handler(w http.ResponseWriter, r *http.Request) {
 			return
 		}
 
-		// Calculate time until midnight, aligns with APOD
-		now := time.Now().UTC()
-		nextMidnight := time.Date(now.Year(), now.Month(), now.Day()+1, 0, 0, 0, 0, time.UTC)
-		timeUntilMidnight := nextMidnight.Sub(now)
+		// Calculate time until EST midnight, aligns with APOD
+		loc, err := time.LoadLocation("America/New_York")
+		if err != nil {
+			loc = time.FixedZone("EST", -5*60*60)
+		}
+		nowEST := time.Now().In(loc)
+		nextMidnightEST := time.Date(nowEST.Year(), nowEST.Month(), nowEST.Day()+1, 0, 0, 0, 0, loc)
+		timeUntilMidnight := time.Until(nextMidnightEST)
 
+		// Save to cache using that exact duration
 		C.Set(dateOnly, fetchSlice, timeUntilMidnight)
+
 	}
 
 	// Render the template
