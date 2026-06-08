@@ -4,6 +4,10 @@ My personal portfolio site, built with Go and deployed on a self-managed VPS. It
 
 Live at [vaqas.dev](https://vaqas.dev).
 
+![Go](https://img.shields.io/badge/Go-00ADD8?style=flat&logo=go&logoColor=white)
+![Docker](https://img.shields.io/badge/Docker-2496ED?style=flat&logo=docker&logoColor=white)
+![Caddy](https://img.shields.io/badge/Caddy-1F88C0?style=flat&logo=caddy&logoColor=white)
+
 ## What it does
 
 - Serves dynamically rendered HTML templates using Go's `html/template`
