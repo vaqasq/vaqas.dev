@@ -1,13 +1,14 @@
 .DEFAULT_GOAL := build
 
-.PHONY: fmt vet build
+.PHONY: fmt vet staticcheck build
 fmt:
 	go fmt ./...
 
 vet: fmt
 	go vet ./...
 
-build: vet
-	GOARCH=amd64 GOOS=linux go build 
+staticcheck: vet
+	staticcheck ./...
 
-# consider staticcheck, govulncheck, etc
+build: staticcheck
+	GOARCH=amd64 GOOS=linux go build 
