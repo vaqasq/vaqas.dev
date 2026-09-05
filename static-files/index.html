@@ -57,6 +57,21 @@
             This site. Built with Go using net/http and html/template, fetching NASA's Astronomy Picture of the Day and caching it until midnight to avoid redundant API calls. Deployed with Docker and Caddy.
         </p>
 
+        <!-- NASA APOD -->
+        <br>
+        <div style="text-align: center;">
+            <h3><a href="https://apod.nasa.gov/apod/astropix.html" target="_blank" title="goes to NASA APOD">
+                daily astro photo | nasa apod
+            </a></h3>
+        </div>
+        <div style="text-align: center;">
+            {{if eq .MediaType "image"}}
+            <img src="{{.ImageURL}}" alt="nasa's astronomy picture of the day" class="apod">
+            {{else}}
+            <p>no picture available today </p>
+            {{end}}
+        </div>
+        
         <h2>cool books I like</h2>
         <h3>
             <ul>
@@ -81,20 +96,6 @@
             </ul>
         </h3>
 
-        <!-- NASA APOD -->
-        <br>
-        <div style="text-align: center;">
-            <h3><a href="https://apod.nasa.gov/apod/astropix.html" target="_blank" title="goes to NASA APOD">
-                daily astro photo | nasa apod
-            </a></h3>
-        </div>
-        <div style="text-align: center;">
-            {{if eq .MediaType "image"}}
-            <img src="{{.ImageURL}}" alt="nasa's astronomy picture of the day" class="apod">
-            {{else}}
-            <p>no picture available today </p>
-            {{end}}
-        </div>
     </body>
 
 </html>

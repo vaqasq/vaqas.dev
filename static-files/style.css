@@ -42,3 +42,6 @@ html {
 html::-webkit-scrollbar {
     display: none; /* Chrome/Safari */
 }
+ul {
+  margin-bottom: 10px; /* Adjust the pixels (px) to get the exact "small space" you need */
+}
