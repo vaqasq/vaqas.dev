@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>vaqas.dev</title>
+		<link>https://vaqas.dev/</link>
+		<description>Recent content on vaqas.dev</description>
+		<generator>Hugo</generator>
+		<language>en-us</language>
+		
+		
+		
+		
+			<atom:link href="https://vaqas.dev/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title></title>
+				<link>https://vaqas.dev/library/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://vaqas.dev/library/</guid>
+				<description>&lt;h3 id=&#34;curated-list-of-some-books-i-own-targeted-towards-beginner-to-intermediate-topics-in-programming&#34;&gt;Curated list of some books I own, targeted towards beginner to intermediate topics in programming.&lt;/h3&gt;&#xA;&lt;p&gt;&lt;strong&gt;Effective C by Robert C. Seacord (2nd Ed.)&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;How I learned C, very straightforward, 10/10 would reccomend.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;&lt;strong&gt;Fluent Python by Luciano Ramalho&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Extremely knowledgeable author, probably the best book for anyone looking to advance their Python skills and knowledge.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;&lt;strong&gt;How Linux Works by Brian Ward (3rd Ed.)&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Very digestable for even new computer hobbyists. I reccomend this to so many as it teaches fundamentals regarding operating system (helps when you read OSTEP), the shell, server administration, and so much more. It even intoduces topics like how containers like Docker and Podman work.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;&lt;strong&gt;But How Do It Know? by J. Clark Scott&lt;/strong&gt;&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title></title>
+				<link>https://vaqas.dev/programming/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://vaqas.dev/programming/</guid>
+				<description>&lt;p&gt;I am an embedded software engineer for my university’s NASA URC team where I develop our robot’s firmware in C/C++. I am also an infrastructure engineer for my university’s cybersecurity team’s servers where I use Proxmox, Ansible, Terraform, and Packer.&lt;/p&gt;&#xA;&lt;h2 id=&#34;skills&#34;&gt;Skills&lt;/h2&gt;&#xA;&lt;p&gt;Languages: C++, C, Golang, Python, Java, SQL, Bash&lt;/p&gt;&#xA;&lt;p&gt;Tools &amp;amp; Infra: Linux, Server Administration, Caddy, Systemd, Git/GitHub&lt;/p&gt;&#xA;&lt;p&gt;Domains: Linux Internals, Networking, Operating Systems, Computer Architecture&lt;/p&gt;&#xA;&lt;h2 id=&#34;projects&#34;&gt;Projects&lt;/h2&gt;&#xA;&lt;h3 id=&#34;docker-container-health-monitor&#34;&gt;Docker Container Health Monitor&lt;/h3&gt;&#xA;&lt;p&gt;A go daemon that monitors my vps docker containers without using docker&amp;rsquo;s SDK, stores data in a local SQLite database, and presents data via HTML.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title></title>
+				<link>https://vaqas.dev/writing/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>https://vaqas.dev/writing/</guid>
+				<description>&lt;p&gt;coming soon&lt;/p&gt;</description>
+			</item>
+	</channel>
+</rss>

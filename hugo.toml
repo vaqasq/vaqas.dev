@@ -1,0 +1,30 @@
+baseURL = 'https://vaqas.dev'
+locale = 'en-us'
+title = 'vaqas.dev'
+theme = 'hugo-theme-tokyo-terminal'
+
+[params]
+  prompt = "vaqas@home:~$"
+  
+  [[params.social]]
+    name = "github"
+    url = "https://github.com/vaqasq"
+
+  [[params.social]]
+    name = "email"
+    url = "mailto:me@vaqas.dev"
+
+
+[menu]
+  [[menu.main]]
+    identifier = "writing"
+    name = "writing"
+    url = "/writing"
+  [[menu.main]]
+    identifier = "library"
+    name = "library"
+    url = "/library"
+  [[menu.main]]
+    identifier = "programming"
+    name = "programming"
+    url = "/programming"

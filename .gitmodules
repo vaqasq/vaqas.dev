@@ -1,0 +1,3 @@
+[submodule "themes/hugo-theme-tokyo-terminal"]
+	path = themes/hugo-theme-tokyo-terminal
+	url = https://github.com/rehan-hk/hugo-tokyo-night-terminal-theme.git
