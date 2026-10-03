@@ -17,10 +17,6 @@ theme = 'hugo-theme-tokyo-terminal'
 
 [menu]
   [[menu.main]]
-    identifier = "writing"
-    name = "writing"
-    url = "/writing"
-  [[menu.main]]
     identifier = "library"
     name = "library"
     url = "/library"

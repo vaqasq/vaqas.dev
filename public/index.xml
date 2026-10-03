@@ -25,12 +25,5 @@
 				<guid>https://vaqas.dev/programming/</guid>
 				<description>&lt;p&gt;I am an embedded software engineer for my university’s NASA URC team where I develop our robot’s firmware in C/C++. I am also an infrastructure engineer for my university’s cybersecurity team’s servers where I use Proxmox, Ansible, Terraform, and Packer.&lt;/p&gt;&#xA;&lt;h2 id=&#34;skills&#34;&gt;Skills&lt;/h2&gt;&#xA;&lt;p&gt;Languages: C++, C, Golang, Python, Java, SQL, Bash&lt;/p&gt;&#xA;&lt;p&gt;Tools &amp;amp; Infra: Linux, Server Administration, Caddy, Systemd, Git/GitHub&lt;/p&gt;&#xA;&lt;p&gt;Domains: Linux Internals, Networking, Operating Systems, Computer Architecture&lt;/p&gt;&#xA;&lt;h2 id=&#34;projects&#34;&gt;Projects&lt;/h2&gt;&#xA;&lt;h3 id=&#34;self-hosting-fun&#34;&gt;Self-Hosting Fun!&lt;/h3&gt;&#xA;&lt;p&gt;I own a basic vps where I host a lot of cool stuff! These include Blocky DNS (DNS Proxy), Web Server (Caddy), VPN Protocol (Wireguard), etc.&lt;/p&gt;</description>
 			</item>
-			<item>
-				<title></title>
-				<link>https://vaqas.dev/writing/</link>
-				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-				<guid>https://vaqas.dev/writing/</guid>
-				<description>&lt;p&gt;coming soon&lt;/p&gt;</description>
-			</item>
 	</channel>
 </rss>
