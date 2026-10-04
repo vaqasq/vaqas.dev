@@ -1,5 +1,3 @@
-I am an embedded software engineer for my university’s NASA URC team where I develop our robot’s firmware in C/C++. I am also an infrastructure engineer for my university’s cybersecurity team’s servers where I use Proxmox, Ansible, Terraform, and Packer.
-
 ## Skills
 
 Languages: C++, C, Golang, Python, Java, SQL, Bash
