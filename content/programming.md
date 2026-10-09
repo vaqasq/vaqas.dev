@@ -19,6 +19,3 @@ A go daemon that monitors my vps docker containers without using docker's SDK, s
 A simple terminal-based text editor written from scratch in go, without a TUI library.
 - [View Source on GitHub](https://github.com/vaqasq/gotex)
 
-### vim2go (in progress)
-vim-hero but in your terminal. Uses the bubbletea framework.
-
