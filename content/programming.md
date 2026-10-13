@@ -18,3 +18,7 @@ A go daemon that monitors my vps docker containers without using docker's SDK, s
 ### Gotex
 A simple terminal-based text editor written from scratch in go, without a TUI library.
 - [View Source on GitHub](https://github.com/vaqasq/gotex)
+
+### GNU Core Utils Reimplementations
+Practice reimplementing GNU tools to improve at C and systems programming.
+- [View Source on GitHub](https://github.com/vaqasq/gnu-core-util-reimplementations)
