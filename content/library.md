@@ -19,12 +19,14 @@
 - Straightforward yet extremely detailed introduction to the Go programming language. Whether or not Golang is a good first language for new computer hobbyists is a topic I still ponder over, as despite being a good medium between say C and Python, its design choices are not fully understandable without considering the context of the languages inception.
 
 **Operating Systems: Three Easy Pieces by Remzi and Andrea Arpaci-Dusseau**
-- Currently reading. Very clear, practical code examples. I've tried to read this a few times over the past year despite my lack C and computer architecture knowledge. Needless to say, you should definitely have strong fundamentals in those 2 areas before reading a book like this. You will be greatly rewarded.
+- Very clear, practical code examples. I've tried to read this a few times over the past year despite my lack C and computer architecture knowledge. Needless to say, you should definitely have strong fundamentals in those 2 areas before reading a book like this. You will be greatly rewarded. With books such as these, I am of the opinion that one shoudl stick to the meat of the content, and leave more of the detailed, specifics-oriented chapters for later when they are more relevent. However, I usually end up reading the heavy majority of the book, as delineating between what is relevant and what is not at the moment isn't easy for a begineer like myself.
+
+**The Linux Programming Interface by Michael Kerrisk**
+- Currently reading. Extremely excited. Man7.org is soooo useful, so I am very greatful to Mr. Kerrisk.
 
 ### Books I will read soon (and am *very excited* about)
 
 - TCP/IP Illustrated Vol. 1 2nd Ed.
 - Unix Network Programming Vol. 1 3rd Ed.
-- The Linux Programming Interface
 
 Given my recent interest in W. Richard Steven's work, I was considering his book "Advanced Programming in Unix Environments", but Michael Kerrisk's TLPI is simply too good to pass up, and can be thought of as its successor.
