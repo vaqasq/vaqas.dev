@@ -3,7 +3,7 @@
 **Effective C by Robert C. Seacord (2nd Ed.)**
 - How I learned C, very straightforward, 10/10 would reccomend.
 
-**Fluent Python by Luciano Ramalho** 
+**Fluent Python by Luciano Ramalho (2nd Ed.)** 
 - Extremely knowledgeable author, probably the best book for anyone looking to advance their Python skills and knowledge.
 
 **How Linux Works by Brian Ward (3rd Ed.)**
