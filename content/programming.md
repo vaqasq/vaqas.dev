@@ -15,10 +15,11 @@ I own a basic vps where I host a lot of cool stuff! These include a Blocky DNS p
 A go daemon that monitors my vps docker containers without using docker's SDK, stores data in a local SQLite database, and presents data via HTML.
 - [View Source on GitHub](https://github.com/vaqasq/monitor.vaqas.dev)
 
+### C Reimplementations
+Re-engineering parts of the GNU coreutils, glibc, as well as implementing fully functional arena and heap-based allocators, stdio.h, etc.
+- [View Source on GitHub](https://github.com/vaqasq/c_reimplementations)
+
 ### Gotex
 A simple terminal-based text editor written from scratch in go, without a TUI library.
 - [View Source on GitHub](https://github.com/vaqasq/gotex)
 
-### my-coreutils
-Practice reimplementing GNU Coreutils to improve at C and systems programming.
-- [View Source on GitHub](https://github.com/vaqasq/my-coreutils)
