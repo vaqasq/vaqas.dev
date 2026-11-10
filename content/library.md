@@ -24,7 +24,7 @@
 **The Linux Programming Interface by Michael Kerrisk**
 - Currently reading. Extremely excited. Man7.org is soooo useful, so I am very greatful to Mr. Kerrisk.
 
-### Books I will read soon (and am *very excited* about)
+### Books I will read soon.
 
 - TCP/IP Illustrated Vol. 1 2nd Ed.
 - Unix Network Programming Vol. 1 3rd Ed.
