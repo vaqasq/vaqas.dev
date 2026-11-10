@@ -1,6 +1,6 @@
 Welcome!
 
-I'm an undergraduate broadly interested in systems programming and infrastructure, as well as the *vi family* of text editors (if you couldn't tell by the tokyo-night theme).
+I'm an undergraduate broadly interested in systems programming and infrastructure, as well as the *vi family* of text editors.
 
  I currently work as a ***network engineer intern***.
 
