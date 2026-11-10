@@ -1,11 +1,3 @@
-## Skills
-
-Languages: C, Golang, Python, SQL, Bash
-
-Tools & Infra: Linux, Server Administration, Caddy, Git/GitHub
-
-Domains: Linux Internals, Networking, Operating Systems, Computer Architecture
-
 ## Projects
 
 ### Self-Hosting Fun!
@@ -22,4 +14,13 @@ Re-engineering parts of the GNU coreutils, glibc, as well as implementing fully 
 ### Gotex
 A simple terminal-based text editor written from scratch in go, without a TUI library.
 - [View Source on GitHub](https://github.com/vaqasq/gotex)
+
+## Skills
+
+Languages: C, Golang, Python, SQL, Bash
+
+Tools & Infra: Linux, Server Administration, Caddy, Git/GitHub
+
+Domains: Linux Internals, Networking, Operating Systems, Computer Architecture
+
 
