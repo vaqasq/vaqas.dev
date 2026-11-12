@@ -16,10 +16,10 @@ theme = 'hugo-theme-tokyo-terminal'
 
 
 [menu]
-  [[menu.main]]
-    identifier = "library"
-    name = "library"
-    url = "/library"
+#  [[menu.main]]
+#    identifier = "library"
+#    name = "library"
+#    url = "/library"
   [[menu.main]]
     identifier = "programming"
     name = "programming"
