@@ -21,7 +21,7 @@ Implemented an *arena allocator* and *heap-based allocator* (free-list style)
 
 ## Skills
 
-Languages: C, Golang, Python, SQL, Bash
+Languages: C, C++, Golang, Python, SQL, Bash
 
 Tools & Infra: Linux, Server Administration, Caddy, Git/GitHub
 
